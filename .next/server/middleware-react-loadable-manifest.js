@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"pages/index.js -> ../components/FullPage\":{\"id\":\"pages/index.js -> ../components/FullPage\",\"files\":[\"static/chunks/_pages-dir-browser_components_FullPage_js.js\"]}}"
