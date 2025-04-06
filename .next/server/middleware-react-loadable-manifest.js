@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"pages/index.js -> ../components/FullPage\":{\"id\":\"pages/index.js -> ../components/FullPage\",\"files\":[\"static/chunks/_pages-dir-browser_components_FullPage_js.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{\"pages/diary.js -> ../components/Map\":{\"id\":\"pages/diary.js -> ../components/Map\",\"files\":[\"static/chunks/_pages-dir-browser_components_Map_js.js\"]},\"pages/index.js -> ../components/FullPage\":{\"id\":\"pages/index.js -> ../components/FullPage\",\"files\":[\"static/chunks/_pages-dir-browser_components_FullPage_js.js\"]}}"
