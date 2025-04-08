@@ -2,7 +2,10 @@ import { useState, useRef, useEffect } from 'react';
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([
-        { text: "Hi! I'm your personal assistant. How can I help you today?", sender: 'bot' }
+        {
+            text: "Hi! I'm Shrishti's AI assistant. I can help you learn more about her work, projects, and experiences. You can also ask me about her contact information!",
+            isUser: false
+        }
     ]);
     const [input, setInput] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -22,16 +25,25 @@ const Chatbot = () => {
         if (!input.trim()) return;
 
         // Add user message
-        setMessages(prev => [...prev, { text: input, sender: 'user' }]);
-        setInput('');
+        setMessages(prev => [...prev, { text: input, isUser: true }]);
+        
+        // Process the input
+        const userInput = input.toLowerCase();
+        let botResponse = "I'm not sure how to help with that. You can ask me about Shrishti's work, projects, or contact information.";
 
-        // Simulate bot response
+        if (userInput.includes('contact') || userInput.includes('email') || userInput.includes('linkedin') || userInput.includes('github')) {
+            botResponse = "Here's how you can reach Shrishti:\n\n" +
+                         "📧 Email: sseksari@gmail.com\n" +
+                         "💼 LinkedIn: linkedin.com/in/shrishti-seksaria\n" +
+                         "👩‍💻 GitHub: github.com/sseksari";
+        }
+
+        // Add bot response after a short delay
         setTimeout(() => {
-            setMessages(prev => [...prev, { 
-                text: "I'm a simple chatbot. You can customize my responses based on your needs!", 
-                sender: 'bot' 
-            }]);
-        }, 1000);
+            setMessages(prev => [...prev, { text: botResponse, isUser: false }]);
+        }, 500);
+
+        setInput('');
     };
 
     return (
@@ -73,7 +85,7 @@ const Chatbot = () => {
                         {messages.map((message, index) => (
                             <div 
                                 key={index} 
-                                className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'}`}
+                                className={`message ${message.isUser ? 'user-message' : 'bot-message'}`}
                             >
                                 {message.text}
                             </div>

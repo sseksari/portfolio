@@ -8,6 +8,89 @@ const Map = dynamic(() => import('../components/Map'), { ssr: false });
 // Replace with your Google Maps API key
 const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
+const poems = [
+    {
+        title: "Happiness...",
+        content: `I was talking to my 10 year old self lately<br />
+Catching up on if she was happy<br />
+She told me we got a candy yesterday<br />
+And day before dad came to pick her up from school<br />
+The week before we got a sticker from our teacher<br />
+And our friend called us her best friend<br />
+I blushed, and laughed, and giggled<br />
+And then she asked me<br />
+"21 yr old shrishti, are we happy"<br />
+And I felt blank<br />
+Nothing to say, hard to think<br />
+Just blank…<br />
+And then she told me<br />
+Maybe it can be a person smiling at us<br />
+Or the weather outside<br />
+Maybe a conversation with our old friend<br />
+Or a nice dinner party<br />
+Maybe it was our family and their stories<br />
+Or a comedy movie<br />
+our favourite song<br />
+Or our all time favourite chocolate?<br />
+And I smiled,<br />
+at nothing and at everything<br />
+All at the same time<br />
+Happiness was right here, everywhere<br />
+I just needed to change my lens, clean it, and wear my brand new shades<br />
+So next time when you can't think of why you are happy<br />
+Close your eyes and remember your 10 year old self!`
+    },
+    {
+        title: "Balloons",
+        content: `The sky is painted blue, the warm wind swirling away like It's mid-June<br />
+The air smells musty, yet refreshing and new<br />
+I look into the naked sky<br />
+The Faint pictures of faded clouds and hot air balloons floating by<br /><br />
+I turned my head around to grab the camera<br />
+A perfect picture to remember this by…<br />
+The balloons slid away somewhere<br />
+The sky was empty as it could be<br />
+It was just a matter of seconds<br />
+And the sky was again so lonely<br /><br />
+Our moments are like balloons<br />
+Slipping from our grasp<br />
+Melting away into oblivion<br />
+With a hope that we meet them soon<br />
+You miss the beat and you go off tune<br />
+You end up loosing on these balloons<br /><br />
+Each balloon, a new experience<br />
+A new beginning yet an old end<br />
+The climax you see is that you're just left with a big fat bunch of these memories<br />
+Some you experience, some you miss<br />
+Some you fill with roses and heart eyes<br />
+Some are like thorns filled with regrets and broken sighs<br /><br />
+Well in the end the choice lands with you,<br />
+Not choosing is a choice too<br />
+So what kind of a bunch are you building to take back with you?`
+    },
+    {
+        title: "Grow",
+        content: `accepting change forces you to break through your comfort zone<br />
+it makes you build your own sweet home<br />
+switching from the fragile to the agile mode<br />
+we oscillate between feelings of stress and hope<br /><br />
+we can't stay still where we began<br />
+even a stagnant pond kills its fish before its hardly born<br />
+a gushing river changes and changes and changes<br />
+giving life to so many strangers<br />
+don't kill your future self by being afraid of transitions<br />
+because these only make life beautiful and full of lessons<br /><br />
+spend time with yourself, focus on your growth<br />
+physical, mental, something completely out of scope<br />
+make mistakes, make amends, make new friends<br />
+explore hobbies and interests<br />
+do things you never imagined<br />
+drive your passion on new roads<br />
+it'll take you faster towards your goals<br />
+but always remember to accept the change and break through your comfort zone`
+    }
+];
+
 export default function Diary() {
     const [activeSection, setActiveSection] = useState('travel');
     const [pageNumber, setPageNumber] = useState(1);
@@ -29,6 +112,16 @@ export default function Diary() {
 
     const toggleCard = (cardId) => {
         setExpandedCard(expandedCard === cardId ? null : cardId);
+    };
+
+    const handlePoemNavigation = (direction) => {
+        setCurrentPoemIndex(prevIndex => {
+            if (direction === 'prev') {
+                return prevIndex === 0 ? poems.length - 1 : prevIndex - 1;
+            } else {
+                return prevIndex === poems.length - 1 ? 0 : prevIndex + 1;
+            }
+        });
     };
 
     return (
@@ -142,105 +235,24 @@ export default function Diary() {
                         <div className="poetry-subtitle">"..where thoughts embrace"</div>
                         <div className="poetry-grid">
                             <div className="poem-card">
-                                {pageNumber === 1 && (
-                                    <div className="poem-page">
-                                        <h3>Happiness...</h3>
-                                        <div className="poem-content">
-                                            <p>
-                                                I was talking to my 10 year old self lately<br />
-                                                Catching up on if she was happy<br />
-                                                She told me we got a candy yesterday<br />
-                                                And day before dad came to pick her up from school<br />
-                                                The week before we got a sticker from our teacher<br />
-                                                And our friend called us her best friend<br />
-                                                I blushed, and laughed, and giggled<br />
-                                                And then she asked me<br />
-                                                "21 yr old shrishti, are we happy"<br />
-                                                And I felt blank<br />
-                                                Nothing to say, hard to think<br />
-                                                Just blank…<br />
-                                                And then she told me<br />
-                                                Maybe it can be a person smiling at us<br />
-                                                Or the weather outside<br />
-                                                Maybe a conversation with our old friend
-                                                Or a nice dinner party<br />
-                                                Maybe it was our family and their stories<br />
-                                                Or a comedy movie<br />
-                                                our favourite song<br />
-                                                Or our all time favourite chocolate?<br />
-                                                And I smiled,<br />
-                                                at nothing and at everything<br />
-                                                All at the same time<br />
-                                                Happiness was right here, everywhere<br />
-                                                I just needed to change my lens, clean it, and wear my brand new shades<br />
-                                                So next time when you can't think of why you are happy<br />
-                                                Close your eyes and remember your 10 year old self!
-                                            </p>
-                                        </div>
+                                <div className="poem-page">
+                                    <h3>{poems[currentPoemIndex].title}</h3>
+                                    <div className="poem-content">
+                                        <p dangerouslySetInnerHTML={{ __html: poems[currentPoemIndex].content }} />
                                     </div>
-                                )}
-                                {pageNumber === 2 && (
-                                    <div className="poem-page">
-                                        <h3>Balloons</h3>
-                                        <div className="poem-content">
-                                            <p>
-                                                The sky is painted blue, the warm wind swirling away like It's mid-June<br />
-                                                The air smells musty, yet refreshing and new<br />
-                                                I look into the naked sky<br />
-                                                The Faint pictures of faded clouds and hot air balloons floating by<br /><br />
-                                                I turned my head around to grab the camera<br />
-                                                A perfect picture to remember this by…<br />
-                                                The balloons slid away somewhere<br />
-                                                The sky was empty as it could be<br />
-                                                It was just a matter of seconds<br />
-                                                And the sky was again so lonely<br /><br />
-                                                Our moments are like balloons<br />
-                                                Slipping from our grasp<br />
-                                                Melting away into oblivion<br />
-                                                With a hope that we meet them soon<br />
-                                                You miss the beat and you go off tune<br />
-                                                You end up loosing on these balloons<br /><br />
-                                                Each balloon, a new experience<br />
-                                                A new beginning yet an old end<br />
-                                                The climax you see is that you're just left with a big fat bunch of these memories
-                                                Some you experience, some you miss<br />
-                                                Some you fill with roses and heart eyes<br />
-                                                Some are like thorns filled with regrets and broken sighs<br /><br />
-                                                Well in the end the choice lands with you,<br />
-                                                Not choosing is a choice too<br />
-                                                So what kind of a bunch are you building to take back with you?
-                                            </p>
-                                        </div>
-                                    </div>
-                                )}
-                                {pageNumber === 3 && (
-                                    <div className="poem-page">
-                                        <h3>Grow</h3>
-                                        <div className="poem-content">
-                                            <p>
-                                                accepting change forces you to break through your comfort zone<br />
-                                                it makes you build your own sweet home<br />
-                                                switching from the fragile to the agile mode<br />
-                                                we oscillate between feelings of stress and hope<br /><br />
-                                                we can't stay still where we began<br />
-                                                even a stagnant pond kills its fish before its hardly born<br />
-                                                a gushing river changes and changes and changes<br />
-                                                giving life to so many strangers<br />
-                                                don't kill your future self by being afraid of transitions<br />
-                                                because these only make life beautiful and full of lessons<br /><br />
-                                                spend time with yourself, focus on your growth<br />
-                                                physical, mental, something completely out of scope<br />
-                                                make mistakes, make amends, make new friends<br />
-                                                explore hobbies and interests<br />
-                                                do things you never imagined<br />
-                                                drive your passion on new roads<br />
-                                                it'll take you faster towards your goals<br />
-                                                but always remember to accept the change and break through your comfort zone
-                                            </p>
-                                        </div>
-                                    </div>
-                                )}
+                                </div>
                             </div>
+                        </div>
+                        <div className="poem-navigation">
+                            {[1, 2, 3].map((num) => (
+                                <button 
+                                    key={num}
+                                    className={`poem-nav-button ${currentPoemIndex + 1 === num ? 'active' : ''}`}
+                                    onClick={() => setCurrentPoemIndex(num - 1)}
+                                >
+                                    {num}
+                                </button>
+                            ))}
                         </div>
                     </div>
                 )}

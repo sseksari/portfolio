@@ -50,8 +50,8 @@ export default function FullPage() {
                         <h2 className="title">Full Stack Developer</h2>
                         <div className="about-text">
                             <p>
-                                A passionate developer focused on creating elegant and efficient solutions. 
-                                I specialize in web development and enjoy building meaningful applications that make a difference.
+                            A passionate data enthusiast and software engineer with an entrepreneurial and growth-driven mindset. 
+                            I believe in harnessing the power of data and AI to drive smart, impactful decisions that fuel business success.
                             </p>
                         </div>
                         <div className="cta-buttons">
@@ -81,8 +81,9 @@ export default function FullPage() {
                             <div className="about-text-content">
                                 <h3 className="about-card-title">Hello, I'm Shrishti!</h3>
                                 <p className="about-card-content">
-                                    A passionate Full Stack Developer with a unique blend of software engineering and data expertise. 
-                                    I love turning complex problems into elegant solutions that make a real difference. 
+                                    I’m driven by curiosity and a desire to solve real-world problems through tech. 
+                                    I enjoy diving into complex challenges, understanding user needs, and building solutions - using skills I have or picking up new ones along the way. 
+                                    Long term, I’m excited to build something of my own and grow alongside the people I work with.
                                 </p>
                             </div>
                         </div>
@@ -91,7 +92,13 @@ export default function FullPage() {
                             <div className="about-text-content">
                                 <h3 className="about-card-title">Education & Growth</h3>
                                 <p className="about-card-content">
+                                    International Student in the USA from Calcutta, India. 
+                                    <br></br>
+                                    <br></br>
                                     Major in Data Science and Minor in Economics from University of California, San Diego.
+                                    <br></br>
+                                    <br></br>
+                                    #Triton2024
                                 </p>
                             </div>
                         </div>
@@ -100,9 +107,9 @@ export default function FullPage() {
                             <div className="about-text-content">
                                 <h3 className="about-card-title">Passion & Purpose</h3>
                                 <p className="about-card-content">
-                                    I'm driven by the challenge of finding solutions to real-world problems. Whether it's developing 
-                                    web solutions or working with data, I focus on creating experiences that enhance people's 
-                                    lives and solve real-world problems. I have an entrepreneurial mindset and love to explore new ideas which would make a difference.
+                                I believe that data and AI are powerful tools to drive smarter, more meaningful decisions in every industry.
+                                My passion lies in creating impactful solutions that not only solve problems but also empower people.
+                                With an entrepreneurial mindset and a love for continuous learning, my purpose is to innovate, build, and uplift those around me.
                                 </p>
                             </div>
                         </div>
@@ -113,7 +120,7 @@ export default function FullPage() {
                                 <p className="about-card-content">
                                     When I'm not coding, I'm exploring life's adventures! 
                                     <br /><br />
-                                    ✍️ Poetry | 🍳 Cooking | ✈️ Travel
+                                    ✍️ Poetry | 🍳 Cooking | ✈️ Travel | 💪 Fitness & Health
                                     <br /><br />
                                     <a href="/diary" className="diary-link">
                                         📖 Click here for my digital diary
