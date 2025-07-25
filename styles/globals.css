@@ -196,7 +196,7 @@ a {
   object-fit: cover;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  background-image: url('/profile.jpg'); /* Path relative to public/ */
+  background-image: url('/profilepic.JPG');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
