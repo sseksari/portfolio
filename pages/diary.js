@@ -244,15 +244,21 @@ export default function Diary() {
                             </div>
                         </div>
                         <div className="poem-navigation">
-                            {[1, 2, 3].map((num) => (
-                                <button 
-                                    key={num}
-                                    className={`poem-nav-button ${currentPoemIndex + 1 === num ? 'active' : ''}`}
-                                    onClick={() => setCurrentPoemIndex(num - 1)}
-                                >
-                                    {num}
-                                </button>
-                            ))}
+                            <button 
+                                className="poem-nav-button"
+                                onClick={() => handlePoemNavigation('prev')}
+                            >
+                                ←
+                            </button>
+                            <span className="poem-page-number">
+                                {currentPoemIndex + 1} / {poems.length}
+                            </span>
+                            <button 
+                                className="poem-nav-button"
+                                onClick={() => handlePoemNavigation('next')}
+                            >
+                                →
+                            </button>
                         </div>
                     </div>
                 )}
