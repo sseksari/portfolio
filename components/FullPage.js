@@ -59,14 +59,7 @@ export default function FullPage() {
                             <button onClick={() => scrollToSection('contact')} className="cta-button outline">Contact Me</button>
                         </div>
                     </div>
-                    <div className="profile-section">
-                        <Image
-                            src="/profilepic.JPG"
-                            alt="Shrishti Seksaria"
-                            width={400}
-                            height={400}
-                            className="profile-image"
-                        />
+                    <div className="profile-pic">
                     </div>
                 </div>
             </section>
