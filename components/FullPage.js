@@ -61,7 +61,7 @@ export default function FullPage() {
                     </div>
                     <div className="profile-section">
                         <Image
-                            src="/profilepic.jpg"
+                            src="/profilepic.JPG"
                             alt="Shrishti Seksaria"
                             width={400}
                             height={400}
