@@ -15,7 +15,7 @@ const Map = () => {
     const [countries, setCountries] = useState(null);
 
     const countryLists = {
-        been: ['USA', 'IND', 'AUS', 'AUT', 'CZE', 'HRV', 'JPN', 'THA', 'MEX', 'SGP', 'MYS'],
+        been: ['USA', 'IND', 'AUS', 'AUT', 'CZE', 'HRV', 'JPN', 'THA', 'MEX', 'SGP', 'MYS', "CHN"],
         lived: ['USA', 'IND'],
         wish: ['GBR', 'ESP', 'BRA', 'ITA']
     };

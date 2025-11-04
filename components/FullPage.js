@@ -47,11 +47,12 @@ export default function FullPage() {
                 <div className="hero">
                     <div className="content-section">
                         <h1 className="name">Shrishti Seksaria</h1>
-                        <h2 className="title">Full Stack Developer</h2>
+                        <h2 className="title">Business Development @ JGH</h2>
                         <div className="about-text">
                             <p>
                             A passionate data enthusiast and software engineer with an entrepreneurial and growth-driven mindset. 
                             I believe in harnessing the power of data and AI to drive smart, impactful decisions that fuel business success.
+                            If you are looking to talk about textiles, applications of data and AI, or anything entrepreneurial, feel free to reach out!
                             </p>
                         </div>
                         <div className="cta-buttons">
@@ -74,9 +75,9 @@ export default function FullPage() {
                             <div className="about-text-content">
                                 <h3 className="about-card-title">Hello, I'm Shrishti!</h3>
                                 <p className="about-card-content">
-                                    I’m driven by curiosity and a desire to solve real-world problems through tech. 
-                                    I enjoy diving into complex challenges, understanding user needs, and building solutions - using skills I have or picking up new ones along the way. 
-                                    Long term, I’m excited to build something of my own and grow alongside the people I work with.
+                                    I’ve recently joined JGH, a garment manufacturing company, as part of the business development team. 
+                                    Driven by curiosity for solving real-world problems, I’m excited to explore how innovation and strategy can shape the future of apparel. 
+                                    This new chapter is about learning and growing—both personally and alongside the people I work with.
                                 </p>
                             </div>
                         </div>
@@ -130,12 +131,22 @@ export default function FullPage() {
                 <div className="container">
                     <h2>Experience</h2>
                     <div className="experience-content">
+                    <div className="experience-card">
+                            <div>
+                                <h3 className="experience-title">Business Development @ JGH</h3>
+                                <p className="experience-description">
+                                At JGH, I’m working across a breadth of projects — from market research and data-driven insights to strategy and new product development. 
+                                My focus is on understanding markets, identifying growth opportunities, and exploring how innovation can shape the future of textiles and apparel.
+                                </p>
+                            </div>
+                        </div>
                         <div className="experience-card">
                             <div>
                                 <h3 className="experience-title">Software Engineer @ Amgen</h3>
                                 <p className="experience-description">
-                                    Working on developing and maintaining enterprise-level applications, 
-                                    focusing on creating efficient and scalable solutions for biotech operations.
+                                    Worked on developing and maintaining enterprise-level applications, 
+                                    with a focus on creating efficient and scalable solutions for biotech operations.
+                                    Managed and engineered data to support the internal applications. 
                                 </p>
                             </div>
                         </div>
